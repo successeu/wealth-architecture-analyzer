@@ -1,0 +1,1059 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wealth Architecture Masterclass | June Yoon | Success Resources</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Inter', sans-serif;
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d1f0d 50%, #1a1a1a 100%);
+            color: #ffffff;
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .container { max-width: 900px; margin: 0 auto; }
+        
+        .sr-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+            margin-bottom: 30px;
+            border-bottom: 1px solid rgba(220, 90, 50, 0.2);
+        }
+        
+        .sr-logo {
+            font-size: 13px;
+            color: #888;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-weight: 600;
+        }
+        
+        .sr-logo span {
+            color: #dc5a32;
+        }
+        
+        .progress-bar {
+            width: 100%;
+            height: 4px;
+            background: rgba(220, 90, 50, 0.1);
+            border-radius: 2px;
+            margin-bottom: 40px;
+            overflow: hidden;
+        }
+        
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #dc5a32 0%, #ff7a4a 100%);
+            transition: width 0.4s ease;
+        }
+        
+        .hero-section {
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
+            gap: 50px;
+            align-items: center;
+            margin-bottom: 50px;
+            padding: 40px;
+            background: linear-gradient(135deg, rgba(220, 90, 50, 0.08) 0%, rgba(220, 90, 50, 0.03) 100%);
+            border: 1px solid rgba(220, 90, 50, 0.15);
+            border-radius: 16px;
+        }
+        
+        .profile-circle {
+            width: 280px;
+            height: 280px;
+            background: linear-gradient(135deg, #dc5a32 0%, #ff7a4a 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 20px 60px rgba(220, 90, 50, 0.3);
+        }
+        
+        .profile-image {
+            width: 270px;
+            height: 270px;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 270 270"><rect fill="%23333" width="270" height="270"/><text x="50%" y="50%" font-size="14" text-anchor="middle" dominant-baseline="middle" fill="%23666">[Your Photo]</text></svg>');
+            background-size: cover;
+            border-radius: 50%;
+            border: 4px solid #1a1a1a;
+            object-fit: cover;
+        }
+        
+        .hero-content h1 {
+            font-size: 44px;
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 16px;
+            letter-spacing: -1px;
+            color: #ffffff;
+        }
+        
+        .hero-content h1 span {
+            color: #dc5a32;
+        }
+        
+        .hero-content .subtitle {
+            font-size: 18px;
+            color: #d0d0d0;
+            line-height: 1.6;
+            margin-bottom: 24px;
+            font-weight: 400;
+        }
+        
+        .hero-cred {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            padding-top: 24px;
+            border-top: 1px solid rgba(220, 90, 50, 0.2);
+            font-size: 13px;
+            color: #888;
+        }
+        
+        .hero-cred strong {
+            color: #ffffff;
+            display: block;
+            margin-bottom: 4px;
+            font-size: 14px;
+        }
+        
+        .hero-cred span {
+            color: #dc5a32;
+            font-weight: 600;
+        }
+        
+        .step-content {
+            display: none;
+            animation: slideIn 0.4s ease-out;
+        }
+        
+        .step-content.active { display: block; }
+        
+        @keyframes slideIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .step-header {
+            margin-bottom: 35px;
+        }
+        
+        .step-number {
+            display: inline-block;
+            background: rgba(220, 90, 50, 0.15);
+            border: 1.5px solid rgba(220, 90, 50, 0.3);
+            color: #dc5a32;
+            width: 50px;
+            height: 50px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+        
+        .step-header h2 {
+            font-size: 32px;
+            font-weight: 700;
+            margin-bottom: 10px;
+            color: #ffffff;
+        }
+        
+        .step-header .hint {
+            color: #888;
+            font-size: 14px;
+            font-weight: 400;
+        }
+        
+        .form-group {
+            margin: 30px 0;
+        }
+        
+        label {
+            display: block;
+            color: #ffffff;
+            margin-bottom: 12px;
+            font-weight: 600;
+            font-size: 15px;
+            letter-spacing: 0.3px;
+        }
+        
+        .label-subtitle {
+            display: block;
+            color: #888;
+            font-size: 13px;
+            font-weight: 400;
+            margin-top: 4px;
+        }
+        
+        input, select, textarea {
+            width: 100%;
+            padding: 16px 18px;
+            border: 1.5px solid rgba(220, 90, 50, 0.2);
+            border-radius: 10px;
+            background: rgba(255, 255, 255, 0.03);
+            color: #ffffff;
+            font-size: 15px;
+            transition: all 0.3s;
+            font-family: inherit;
+        }
+        
+        input:focus, select:focus, textarea:focus {
+            outline: none;
+            border-color: #dc5a32;
+            background: rgba(255, 255, 255, 0.08);
+            box-shadow: 0 0 0 3px rgba(220, 90, 50, 0.15);
+        }
+        
+        input::placeholder {
+            color: rgba(255, 255, 255, 0.4);
+        }
+        
+        .option-group {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 12px;
+            margin: 15px 0;
+        }
+        
+        .option-item {
+            position: relative;
+        }
+        
+        .option-item input[type="radio"],
+        .option-item input[type="checkbox"] {
+            position: absolute;
+            opacity: 0;
+            cursor: pointer;
+        }
+        
+        .option-item label {
+            display: flex;
+            align-items: center;
+            margin: 0;
+            padding: 16px 18px;
+            background: rgba(220, 90, 50, 0.05);
+            border: 1.5px solid rgba(220, 90, 50, 0.15);
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-weight: 500;
+        }
+        
+        .option-item input[type="radio"]:checked + label,
+        .option-item input[type="checkbox"]:checked + label {
+            background: rgba(220, 90, 50, 0.15);
+            border-color: #dc5a32;
+        }
+        
+        .option-item label:before {
+            content: '';
+            display: inline-block;
+            width: 18px;
+            height: 18px;
+            border: 2px solid #dc5a32;
+            border-radius: 50%;
+            margin-right: 12px;
+            background: transparent;
+        }
+        
+        .option-item input[type="checkbox"] + label:before {
+            border-radius: 4px;
+        }
+        
+        .option-item input[type="radio"]:checked + label:before,
+        .option-item input[type="checkbox"]:checked + label:before {
+            background: #dc5a32;
+            box-shadow: inset 0 0 0 2px #1a1a1a;
+        }
+        
+        .button-group {
+            display: flex;
+            gap: 12px;
+            margin-top: 40px;
+        }
+        
+        button {
+            flex: 1;
+            padding: 16px 24px;
+            border: none;
+            border-radius: 10px;
+            font-size: 15px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+        }
+        
+        .btn-primary {
+            background: linear-gradient(135deg, #dc5a32 0%, #ff7a4a 100%);
+            color: #ffffff;
+            box-shadow: 0 10px 30px rgba(220, 90, 50, 0.3);
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 15px 40px rgba(220, 90, 50, 0.4);
+        }
+        
+        .btn-secondary {
+            background: rgba(220, 90, 50, 0.1);
+            color: #dc5a32;
+            border: 1.5px solid rgba(220, 90, 50, 0.3);
+        }
+        
+        .btn-secondary:hover {
+            background: rgba(220, 90, 50, 0.15);
+            border-color: #dc5a32;
+        }
+        
+        .wealth-summary {
+            background: linear-gradient(135deg, rgba(220, 90, 50, 0.1) 0%, rgba(220, 90, 50, 0.05) 100%);
+            border: 1.5px solid rgba(220, 90, 50, 0.2);
+            border-radius: 12px;
+            padding: 35px;
+            margin: 30px 0;
+        }
+        
+        .summary-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin: 20px 0;
+        }
+        
+        .summary-item {
+            border-bottom: 1px solid rgba(220, 90, 50, 0.15);
+            padding-bottom: 15px;
+        }
+        
+        .summary-item:last-child {
+            border-bottom: none;
+        }
+        
+        .summary-label {
+            color: #888;
+            font-size: 13px;
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+            margin-bottom: 6px;
+        }
+        
+        .summary-value {
+            color: #dc5a32;
+            font-size: 24px;
+            font-weight: 700;
+        }
+        
+        .insight-card {
+            background: rgba(220, 90, 50, 0.08);
+            border-left: 3px solid #dc5a32;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+        
+        .insight-card h4 {
+            color: #dc5a32;
+            margin-bottom: 10px;
+            font-size: 15px;
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+        }
+        
+        .insight-card p {
+            color: #c0c0c0;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+        
+        .cta-box {
+            text-align: center;
+            margin-top: 40px;
+            padding: 40px 30px;
+            background: linear-gradient(135deg, rgba(220, 90, 50, 0.1) 0%, rgba(220, 90, 50, 0.05) 100%);
+            border-radius: 12px;
+            border: 1.5px solid rgba(220, 90, 50, 0.2);
+        }
+        
+        .cta-box h3 {
+            color: #ffffff;
+            margin-bottom: 15px;
+            font-size: 20px;
+        }
+        
+        .cta-box p {
+            color: #b0b0d0;
+            margin-bottom: 20px;
+            font-size: 15px;
+        }
+        
+        .loader {
+            width: 50px;
+            height: 50px;
+            border: 3px solid rgba(220, 90, 50, 0.2);
+            border-top-color: #dc5a32;
+            border-radius: 50%;
+            animation: spin 0.8s linear infinite;
+            margin: 40px auto;
+        }
+        
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+        
+        .loading-text {
+            text-align: center;
+            color: #888;
+            margin-top: 20px;
+            font-size: 14px;
+        }
+        
+        @media (max-width: 768px) {
+            .hero-section {
+                grid-template-columns: 1fr;
+                gap: 30px;
+                padding: 30px;
+            }
+            .profile-circle {
+                width: 200px;
+                height: 200px;
+            }
+            .profile-image {
+                width: 190px;
+                height: 190px;
+            }
+            .hero-content h1 {
+                font-size: 32px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="sr-header">
+            <div class="sr-logo">
+                <span>Success Resources</span> | Premium Financial Training
+            </div>
+            <div style="font-size: 13px; color: #888;">Presented by June Yoon</div>
+        </div>
+        
+        <div class="progress-bar">
+            <div class="progress-fill" id="progressFill"></div>
+        </div>
+        
+        <div id="heroSection" style="margin-bottom: 50px;">
+            <div class="hero-section">
+                <div class="hero-image">
+                    <div class="profile-circle">
+                        <div class="profile-image"></div>
+                    </div>
+                </div>
+                <div class="hero-content">
+                    <h1>Master Your <span>Wealth Mindset.</span><br>Scale Your <span>Financial Success.</span></h1>
+                    <p class="subtitle">You've built an impressive income. Now let's architect the wealth systems that multiply it. Discover the 3 wealth blueprints separating 6-figure earners from 7-figure wealth builders.</p>
+                    <div class="hero-cred">
+                        <strong>June Yoon</strong>
+                        <span>✓ Wealth Architecture Strategist</span>
+                        <span>✓ 500+ High-Income Professionals Coached</span>
+                        <span>✓ Success Resources | Premier Financial Training</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- STEP 1: LOCATION & CURRENCY -->
+        <div id="step-0" class="step-content active">
+            <div class="step-header">
+                <div class="step-number">01</div>
+                <h2>Your Global Context</h2>
+                <p class="hint">We customize strategies based on your tax jurisdiction and currency</p>
+            </div>
+            
+            <div class="form-group">
+                <label>Which country are you based in?
+                    <span class="label-subtitle">→ Determines tax strategies & regulatory opportunities specific to your jurisdiction</span>
+                </label>
+                <select id="country" onchange="updateCurrencyOptions()" required>
+                    <option value="">Select your country...</option>
+                    <option value="US">🇺🇸 United States</option>
+                    <option value="CA">🇨🇦 Canada</option>
+                    <option value="GB">🇬🇧 United Kingdom</option>
+                    <option value="AU">🇦🇺 Australia</option>
+                    <option value="SG">🇸🇬 Singapore</option>
+                    <option value="HK">🇭🇰 Hong Kong</option>
+                    <option value="AE">🇦🇪 United Arab Emirates</option>
+                    <option value="CH">🇨🇭 Switzerland</option>
+                    <option value="DE">🇩🇪 Germany</option>
+                    <option value="FR">🇫🇷 France</option>
+                    <option value="NL">🇳🇱 Netherlands</option>
+                    <option value="JP">🇯🇵 Japan</option>
+                    <option value="IN">🇮🇳 India</option>
+                    <option value="BR">🇧🇷 Brazil</option>
+                    <option value="MX">🇲🇽 Mexico</option>
+                    <option value="NZ">🇳🇿 New Zealand</option>
+                    <option value="IE">🇮🇪 Ireland</option>
+                    <option value="SE">🇸🇪 Sweden</option>
+                    <option value="MY">🇲🇾 Malaysia</option>
+                </select>
+            </div>
+            
+            <div class="form-group">
+                <label>What currency do you earn in?
+                    <span class="label-subtitle">→ Personalizes all wealth projections & benchmarks to your earning currency</span>
+                </label>
+                <select id="currency" required>
+                    <option value="">Select your currency...</option>
+                    <option value="USD">USD - US Dollar</option>
+                    <option value="CAD">CAD - Canadian Dollar</option>
+                    <option value="GBP">GBP - British Pound</option>
+                    <option value="AUD">AUD - Australian Dollar</option>
+                    <option value="SGD">SGD - Singapore Dollar</option>
+                    <option value="HKD">HKD - Hong Kong Dollar</option>
+                    <option value="AED">AED - UAE Dirham</option>
+                    <option value="CHF">CHF - Swiss Franc</option>
+                    <option value="EUR">EUR - Euro</option>
+                    <option value="JPY">JPY - Japanese Yen</option>
+                    <option value="INR">INR - Indian Rupee</option>
+                    <option value="BRL">BRL - Brazilian Real</option>
+                    <option value="MXN">MXN - Mexican Peso</option>
+                    <option value="NZD">NZD - New Zealand Dollar</option>
+                    <option value="SEK">SEK - Swedish Krona</option>
+                    <option value="MYR">MYR - Malaysian Ringgit</option>
+                </select>
+            </div>
+            
+            <div class="button-group">
+                <button class="btn-primary" onclick="nextStep()">Master Your Wealth Mindset</button>
+            </div>
+        </div>
+
+        <!-- STEP 2: INCOME & STATUS -->
+        <div id="step-1" class="step-content">
+            <div class="step-header">
+                <div class="step-number">02</div>
+                <h2>Your Income Reality</h2>
+                <p class="hint">We calibrate insights based on your earnings tier</p>
+            </div>
+            
+            <div class="form-group">
+                <label>Approximate annual income (before tax)
+                    <span class="label-subtitle">→ Determines your wealth acceleration capacity & investment tier eligibility</span>
+                </label>
+                <select id="incomeLevel" required>
+                    <option value="">Select your range...</option>
+                    <option value="100-250">$100K – $250K</option>
+                    <option value="250-500">$250K – $500K</option>
+                    <option value="500-1m">$500K – $1M</option>
+                    <option value="1m+">$1M+</option>
+                </select>
+            </div>
+            
+            <div class="form-group">
+                <label>Are you currently...?
+                    <span class="label-subtitle">→ Your structure determines tax strategies, deductions, & entity optimization opportunities</span>
+                </label>
+                <div class="option-group">
+                    <div class="option-item">
+                        <input type="radio" id="opt-employed" name="status" value="Employed" required>
+                        <label for="opt-employed">W-2 Employed / Corporate Executive</label>
+                    </div>
+                    <div class="option-item">
+                        <input type="radio" id="opt-business" name="status" value="Business Owner">
+                        <label for="opt-business">Business Owner / Entrepreneur</label>
+                    </div>
+                    <div class="option-item">
+                        <input type="radio" id="opt-freelance" name="status" value="Professional">
+                        <label for="opt-freelance">Professional / Consultant / Freelancer</label>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="button-group">
+                <button class="btn-secondary" onclick="prevStep()">Back</button>
+                <button class="btn-primary" onclick="nextStep()">Continue</button>
+            </div>
+        </div>
+
+        <!-- STEP 3: SURPLUS & CAPITAL -->
+        <div id="step-2" class="step-content">
+            <div class="step-header">
+                <div class="step-number">03</div>
+                <h2>Capital Deployment</h2>
+                <p class="hint">Understanding your cash flow architecture</p>
+            </div>
+            
+            <div class="form-group">
+                <label>Monthly discretionary surplus (after all expenses)
+                    <span class="label-subtitle">→ This determines your wealth-building velocity & investment capacity. Higher surplus = faster multiplication</span>
+                </label>
+                <input type="number" id="monthlySurplus" placeholder="e.g., 5000" min="0" step="100" required>
+            </div>
+            
+            <div class="form-group">
+                <label>Current liquid net worth (cash, stocks, etc.)
+                    <span class="label-subtitle">→ Your starting capital base. Compounds exponentially—critical for wealth projections</span>
+                </label>
+                <input type="number" id="liquidWealth" placeholder="e.g., 150000" min="0" step="1000" required>
+            </div>
+            
+            <div class="form-group">
+                <label>What's your primary wealth concern right now?
+                    <span class="label-subtitle">→ Helps us prioritize the #1 lever to pull in your situation</span>
+                </label>
+                <div class="option-group">
+                    <div class="option-item">
+                        <input type="radio" id="concern-tax" name="concern" value="Tax Optimization" required>
+                        <label for="concern-tax">Tax inefficiency (paying too much to government)</label>
+                    </div>
+                    <div class="option-item">
+                        <input type="radio" id="concern-deploy" name="concern" value="Capital Deployment">
+                        <label for="concern-deploy">Where to deploy my surplus (investment confusion)</label>
+                    </div>
+                    <div class="option-item">
+                        <input type="radio" id="concern-protect" name="concern" value="Wealth Protection">
+                        <label for="concern-protect">Protecting & diversifying wealth (risk management)</label>
+                    </div>
+                    <div class="option-item">
+                        <input type="radio" id="concern-legacy" name="concern" value="Legacy Planning">
+                        <label for="concern-legacy">Building generational wealth (family succession)</label>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="button-group">
+                <button class="btn-secondary" onclick="prevStep()">Back</button>
+                <button class="btn-primary" onclick="nextStep()">Continue</button>
+            </div>
+        </div>
+
+        <!-- STEP 4: PERSONAL INFO -->
+        <div id="step-3" class="step-content">
+            <div class="step-header">
+                <div class="step-number">04</div>
+                <h2>Your Details</h2>
+                <p class="hint">Personalize your Wealth Architecture Masterclass Report</p>
+            </div>
+            
+            <div class="form-group">
+                <label>First Name
+                    <span class="label-subtitle">→ Personalizes your report & AI-generated insights</span>
+                </label>
+                <input type="text" id="firstName" placeholder="E.g., James" required>
+            </div>
+            
+            <div class="form-group">
+                <label>Email Address
+                    <span class="label-subtitle">→ We'll send your full report + your personalized wealth strategy (June will contact you to discuss)</span>
+                </label>
+                <input type="email" id="email" placeholder="Your professional email" required>
+            </div>
+            
+            <div class="form-group">
+                <label>What's your timeline for wealth multiplication?
+                    <span class="label-subtitle">→ Determines aggressiveness of strategy & expected compounding results</span>
+                </label>
+                <div class="option-group">
+                    <div class="option-item">
+                        <input type="radio" id="time-12m" name="timeline" value="12 months" required>
+                        <label for="time-12m">12 months (immediate focus—capital needs deployment now)</label>
+                    </div>
+                    <div class="option-item">
+                        <input type="radio" id="time-3yr" name="timeline" value="3 years">
+                        <label for="time-3yr">3 years (strategic planning—balanced growth phase)</label>
+                    </div>
+                    <div class="option-item">
+                        <input type="radio" id="time-5yr" name="timeline" value="5+ years">
+                        <label for="time-5yr">5+ years (generational wealth—max compounding)</label>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="button-group">
+                <button class="btn-secondary" onclick="prevStep()">Back</button>
+                <button class="btn-primary" onclick="generateReport()">Generate My Masterclass Report</button>
+            </div>
+        </div>
+
+        <!-- STEP 5: LOADING -->
+        <div id="step-4" class="step-content">
+            <div style="text-align: center; padding: 60px 20px;">
+                <h2 style="margin-bottom: 10px;">Building Your Wealth Architecture Masterclass</h2>
+                <p class="hint" style="margin-bottom: 30px;">Analyzing your financial position...</p>
+                <div class="loader"></div>
+                <p class="loading-text">Calculating wealth position • Tax optimization opportunities • Growth potential analysis • Your personalized strategy</p>
+            </div>
+        </div>
+
+        <!-- STEP 6: RESULTS -->
+        <div id="step-5" class="step-content">
+            <div class="step-header">
+                <h2 style="color: #dc5a32; font-size: 28px; margin-bottom: 5px;">Your Wealth Architecture Masterclass</h2>
+                <p class="hint">Personalized insights & strategy from June Yoon for <span id="resultName" style="color: #dc5a32;"></span></p>
+            </div>
+            
+            <div class="wealth-summary">
+                <div style="text-align: center; margin-bottom: 25px;">
+                    <div style="font-size: 48px; font-weight: 700; color: #dc5a32; margin-bottom: 8px;" id="scoreValue">-</div>
+                    <div style="color: #888; font-size: 14px; text-transform: uppercase; letter-spacing: 0.8px;" id="scoreLabel">Wealth Position</div>
+                </div>
+                <div class="summary-row">
+                    <div class="summary-item">
+                        <div class="summary-label">Annual Income</div>
+                        <div class="summary-value" id="displayAnnualIncome">-</div>
+                    </div>
+                    <div class="summary-item">
+                        <div class="summary-label">Monthly Surplus</div>
+                        <div class="summary-value" id="displaySurplus">-</div>
+                    </div>
+                </div>
+                <div class="summary-row">
+                    <div class="summary-item">
+                        <div class="summary-label">Liquid Wealth</div>
+                        <div class="summary-value" id="displayLiquid">-</div>
+                    </div>
+                    <div class="summary-item">
+                        <div class="summary-label">Financial Health Score</div>
+                        <div class="summary-value" id="scoreLabel2">-</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="wealth-summary">
+                <h3 style="color: #ffffff; margin-bottom: 15px; font-size: 18px;">Executive Summary</h3>
+                <div id="executiveSummary" style="color: #d0d0d0; line-height: 1.8;"></div>
+            </div>
+            
+            <div class="wealth-summary">
+                <h3 style="color: #ffffff; margin-bottom: 15px; font-size: 18px;">Your Financial Position</h3>
+                <div id="positionAnalysis" style="color: #d0d0d0; line-height: 1.8;"></div>
+            </div>
+            
+            <div class="wealth-summary" style="border-left: 4px solid #dc5a32;">
+                <h3 style="color: #dc5a32; margin-bottom: 20px; font-size: 18px;">🔥 Income Generation Strategy</h3>
+                <div id="incomeGenerationContent"></div>
+            </div>
+            
+            <div class="wealth-summary">
+                <h3 style="color: #ffffff; margin-bottom: 20px; font-size: 18px;">💰 Capital Deployment Blueprint</h3>
+                <div id="capitalDeploymentContent"></div>
+            </div>
+            
+            <div class="wealth-summary">
+                <h3 style="color: #ffffff; margin-bottom: 20px; font-size: 18px;">📊 Tax Optimization Opportunities</h3>
+                <div id="taxOptimizationContent"></div>
+            </div>
+            
+            <div class="wealth-summary">
+                <h3 style="color: #ffffff; margin-bottom: 20px; font-size: 18px;">⚡ Your 90-Day Action Blueprint</h3>
+                <div id="actionPlanContent"></div>
+            </div>
+            
+            <div class="wealth-summary">
+                <h3 style="color: #ffffff; margin-bottom: 20px; font-size: 18px;">📈 Wealth Multiplication Projections</h3>
+                <div class="summary-row">
+                    <div class="summary-item">
+                        <div class="summary-label">90-Day Target</div>
+                        <div class="summary-value" id="projection90">-</div>
+                    </div>
+                    <div class="summary-item">
+                        <div class="summary-label">12-Month Target</div>
+                        <div class="summary-value" id="projection12m">-</div>
+                    </div>
+                </div>
+                <div class="summary-row">
+                    <div class="summary-item">
+                        <div class="summary-label">5-Year Vision</div>
+                        <div class="summary-value" id="projection5yr">-</div>
+                    </div>
+                    <div class="summary-item">
+                        <div class="summary-label">Income Growth Path</div>
+                        <div class="summary-value" id="incomeGrowth">-</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="wealth-summary">
+                <h3 style="color: #ffffff; margin-bottom: 20px; font-size: 18px;">🛡️ Risk Assessment & Wealth Protection</h3>
+                <div id="riskContent"></div>
+            </div>
+            
+            <div class="wealth-summary">
+                <h3 style="color: #ffffff; margin-bottom: 20px; font-size: 18px;">📊 Your Position vs. High-Income Peers</h3>
+                <div id="benchmarkContent"></div>
+            </div>
+            
+            <div class="cta-box">
+                <h3>Your Next Step: The Wealth Strategy Masterclass Call</h3>
+                <p>This report identifies your opportunities. The call maps your personalized 90-day action plan with specific income generation tactics, tax strategies, and capital deployment recommendations.</p>
+                <p style="color: #dc5a32; font-weight: 600; margin-bottom: 15px;">What You'll Get:</p>
+                <ul style="text-align: left; color: #d0d0d0; font-size: 14px; margin: 0 auto 20px; width: fit-content; line-height: 2;">
+                    <li>✓ 2-3 specific income generation opportunities for your situation</li>
+                    <li>✓ Exact tax strategies saving you $8K-$150K+ annually</li>
+                    <li>✓ Capital deployment roadmap (monthly allocation)</li>
+                    <li>✓ 90-day action checklist with exact next steps</li>
+                </ul>
+                <button class="btn-primary" style="width: auto; padding: 14px 40px; font-size: 14px;" onclick="scheduleCall()">Schedule Your Strategy Masterclass Call</button>
+                <p style="font-size: 12px; color: #666; margin-top: 15px;">Investment: Free • Duration: 45 minutes • Outcome: Personalized wealth multiplication strategy</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let currentStep = 0;
+        const totalSteps = 6;
+        
+        function updateProgress() {
+            const progress = ((currentStep + 1) / totalSteps) * 100;
+            document.getElementById('progressFill').style.width = progress + '%';
+        }
+        
+        function showStep(step) {
+            if (step < 0 || step >= totalSteps) return;
+            document.querySelectorAll('.step-content').forEach(el => el.classList.remove('active'));
+            document.getElementById(`step-${step}`).classList.add('active');
+            
+            const heroSection = document.getElementById('heroSection');
+            if (step === 0) {
+                heroSection.style.display = 'block';
+            } else {
+                heroSection.style.display = 'none';
+            }
+            
+            currentStep = step;
+            updateProgress();
+            window.scrollTo(0, 0);
+        }
+        
+        function nextStep() {
+            if (currentStep < totalSteps - 1) showStep(currentStep + 1);
+        }
+        
+        function prevStep() {
+            if (currentStep > 0) showStep(currentStep - 1);
+        }
+        
+        function updateCurrencyOptions() {
+            const country = document.getElementById('country').value;
+            const currencyMap = {
+                'US': 'USD', 'CA': 'CAD', 'GB': 'GBP', 'AU': 'AUD', 'SG': 'SGD',
+                'HK': 'HKD', 'AE': 'AED', 'CH': 'CHF', 'DE': 'EUR', 'FR': 'EUR',
+                'NL': 'EUR', 'JP': 'JPY', 'IN': 'INR', 'BR': 'BRL', 'MX': 'MXN',
+                'NZ': 'NZD', 'IE': 'EUR', 'SE': 'SEK', 'MY': 'MYR'
+            };
+            if (currencyMap[country]) {
+                document.getElementById('currency').value = currencyMap[country];
+            }
+        }
+        
+        function generateReport() {
+            const country = document.getElementById('country').value;
+            const currency = document.getElementById('currency').value;
+            const income = document.getElementById('incomeLevel').value;
+            const surplus = parseFloat(document.getElementById('monthlySurplus').value) || 0;
+            const liquid = parseFloat(document.getElementById('liquidWealth').value) || 0;
+            const firstName = document.getElementById('firstName').value.trim() || 'Achiever';
+            const email = document.getElementById('email').value.trim();
+            
+            if (!country || !currency || !income || !surplus || !liquid || !firstName || !email) {
+                alert('Please complete all fields');
+                return;
+            }
+            
+            showStep(4);
+            
+            const status = document.querySelector('input[name="status"]:checked')?.value || '';
+            const concern = document.querySelector('input[name="concern"]:checked')?.value || '';
+            const timeline = document.querySelector('input[name="timeline"]:checked')?.value || '';
+            
+            const formData = {
+                country, currency, firstName, email,
+                incomeLevel: income, monthlySurplus: surplus, liquidWealth: liquid,
+                status, primaryConcern: concern, timeline,
+                submittedAt: new Date().toISOString()
+            };
+            
+            sendToActiveCampaign(formData);
+            
+            setTimeout(() => {
+                try {
+                    showStep(5);
+                    generateAllContent(firstName, surplus, liquid, income, currency, status, concern, timeline, country);
+                } catch(error) {
+                    console.error('Report error:', error);
+                    alert('Report generated partially. Check console.');
+                }
+            }, 2000);
+        }
+        
+        function calculateWealthScore(surplus, liquid) {
+            try {
+                const baseScore = Math.min((surplus / 100) + (liquid / 10000), 100);
+                return Math.round(baseScore);
+            } catch(e) {
+                return 65;
+            }
+        }
+        
+        function sendToActiveCampaign(data) {
+            try {
+                const payload = {
+                    email: data.email, firstName: data.firstName,
+                    country: data.country, currency: data.currency,
+                    incomeLevel: data.incomeLevel, monthlySurplus: data.monthlySurplus,
+                    liquidWealth: data.liquidWealth, employmentStatus: data.status,
+                    primaryConcern: data.primaryConcern, wealthTimeline: data.timeline,
+                    leadSource: 'Wealth Architecture Masterclass', presenter: 'June Yoon',
+                    submittedAt: data.submittedAt
+                };
+                
+                fetch('https://hooks.zapier.com/hooks/catch/3435365/u7o9p8p/', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(payload)
+                }).catch(err => {
+                    console.log('AC sync note:', err.message);
+                });
+            } catch(e) {
+                console.log('AC sync skipped');
+            }
+        }
+        
+        function generateAllContent(name, surplus, liquid, income, currency, status, concern, timeline, country) {
+            try {
+                const incomeRanges = { '100-250': 150000, '250-500': 375000, '500-1m': 750000, '1m+': 1500000 };
+                const annualIncome = incomeRanges[income] || 150000;
+                const wealthScore = calculateWealthScore(surplus, liquid);
+                const annualSurplus = surplus * 12;
+                const savingsRate = (annualSurplus / annualIncome * 100).toFixed(1);
+                
+                const els = {
+                    resultName: document.getElementById('resultName'),
+                    displayAnnualIncome: document.getElementById('displayAnnualIncome'),
+                    displaySurplus: document.getElementById('displaySurplus'),
+                    displayLiquid: document.getElementById('displayLiquid'),
+                    scoreValue: document.getElementById('scoreValue'),
+                    scoreLabel2: document.getElementById('scoreLabel2'),
+                    executiveSummary: document.getElementById('executiveSummary'),
+                    positionAnalysis: document.getElementById('positionAnalysis'),
+                    incomeGenerationContent: document.getElementById('incomeGenerationContent'),
+                    capitalDeploymentContent: document.getElementById('capitalDeploymentContent'),
+                    taxOptimizationContent: document.getElementById('taxOptimizationContent'),
+                    actionPlanContent: document.getElementById('actionPlanContent'),
+                    projection90: document.getElementById('projection90'),
+                    projection12m: document.getElementById('projection12m'),
+                    projection5yr: document.getElementById('projection5yr'),
+                    incomeGrowth: document.getElementById('incomeGrowth'),
+                    riskContent: document.getElementById('riskContent'),
+                    benchmarkContent: document.getElementById('benchmarkContent')
+                };
+                
+                if (els.resultName) els.resultName.textContent = name;
+                if (els.displayAnnualIncome) els.displayAnnualIncome.textContent = `${currency} ${Math.round(annualIncome).toLocaleString()}`;
+                if (els.displaySurplus) els.displaySurplus.textContent = `${currency} ${Math.round(surplus).toLocaleString()}`;
+                if (els.displayLiquid) els.displayLiquid.textContent = `${currency} ${Math.round(liquid).toLocaleString()}`;
+                if (els.scoreValue) els.scoreValue.textContent = wealthScore;
+                if (els.scoreLabel2) els.scoreLabel2.textContent = wealthScore >= 75 ? 'Excellent' : wealthScore >= 50 ? 'Good' : 'Building';
+                
+                if (els.executiveSummary) {
+                    let summary = `<strong>Dear ${name},</strong><br><br>`;
+                    if (status === 'Business Owner') {
+                        summary += `You're operating at ${currency} ${Math.round(annualIncome).toLocaleString()} annual income as an entrepreneur. Most business owners leave ${currency} ${Math.round(annualIncome * 0.20).toLocaleString()}-${Math.round(annualIncome * 0.30).toLocaleString()} on the table annually through suboptimal structures.`;
+                    } else if (status === 'Professional') {
+                        summary += `As a high-earning consultant earning ${currency} ${Math.round(annualIncome).toLocaleString()}, your path to 7-figures is: (1) Productize your expertise, (2) Implement tax structures, (3) Build alternative income streams.`;
+                    } else {
+                        summary += `Your W-2 income of ${currency} ${Math.round(annualIncome).toLocaleString()} is stable. Your wealth strategy: (1) Launch side income, (2) Tax-optimized investing, (3) Build scalable assets.`;
+                    }
+                    summary += `<br><br>With strategic deployment, your ${currency} ${Math.round(annualSurplus).toLocaleString()} annual surplus becomes ${currency} ${Math.round(annualSurplus * 5 * 1.25).toLocaleString()} in 5 years.`;
+                    els.executiveSummary.innerHTML = summary;
+                }
+                
+                if (els.positionAnalysis) {
+                    const liquidMonths = liquid / (annualIncome / 12);
+                    let analysis = `<strong>Cash Flow:</strong> You're capturing ${savingsRate}% of income—excellent.<br><br><strong>Financial Cushion:</strong> ${liquidMonths.toFixed(1)} months of expenses. ${liquidMonths >= 6 ? '✓ Well-positioned for investment.' : '⚠ Build to 6-12 months before aggressive investing.'}`;
+                    els.positionAnalysis.innerHTML = analysis;
+                }
+                
+                if (els.incomeGenerationContent) {
+                    let content = '';
+                    if (status === 'Business Owner') {
+                        content = `<div class="insight-card"><h4>Strategy 1: Scale Core Business</h4><p>Goal: +20-50% revenue in 12 months = ${currency} ${Math.round(annualIncome * 0.25).toLocaleString()} additional income.</p></div><div class="insight-card"><h4>Strategy 2: Adjacent Revenue Stream</h4><p>Goal: ${currency} ${Math.round(annualIncome * 0.20).toLocaleString()} additional income through group programs, courses, licensing.</p></div><div class="insight-card"><h4>Strategy 3: Entity Optimization</h4><p>Goal: Save ${currency} ${Math.round(annualIncome * 0.20).toLocaleString()} annually in taxes.</p></div>`;
+                    } else if (status === 'Professional') {
+                        content = `<div class="insight-card"><h4>Strategy 1: Productize Expertise</h4><p>Transform hourly work into scalable service = ${currency} ${Math.round(annualIncome * 0.35).toLocaleString()} additional income.</p></div><div class="insight-card"><h4>Strategy 2: Passive Income</h4><p>Build ${currency} ${Math.round(annualSurplus * 0.40).toLocaleString()} annual passive income through products, courses, partnerships.</p></div><div class="insight-card"><h4>Strategy 3: Tax Structure</h4><p>Save ${currency} ${Math.round(annualIncome * 0.15).toLocaleString()} annually through smart entity structure.</p></div>`;
+                    } else {
+                        content = `<div class="insight-card"><h4>Strategy 1: Launch Side Income</h4><p>Generate ${currency} ${Math.round(annualSurplus).toLocaleString()}-${Math.round(annualSurplus * 2).toLocaleString()} additional annual income.</p></div><div class="insight-card"><h4>Strategy 2: Career Optimization</h4><p>Increase W-2 by 15-30% in 24 months = ${currency} ${Math.round(annualIncome * 0.20).toLocaleString()} additional.</p></div><div class="insight-card"><h4>Strategy 3: Tax Advantages</h4><p>Save ${currency} ${Math.round(annualIncome * 0.12).toLocaleString()} annually.</p></div>`;
+                    }
+                    els.incomeGenerationContent.innerHTML = content;
+                }
+                
+                if (els.capitalDeploymentContent) {
+                    let content = `<div class="insight-card"><h4>Monthly Allocation: ${currency} ${Math.round(surplus).toLocaleString()}</h4><div style="background:rgba(220,90,50,0.05);padding:15px;border-radius:8px;"><div style="display:flex;justify-content:space-between;margin:8px 0;"><span>60% - Investments</span><span style="color:#dc5a32;font-weight:600;">${currency} ${Math.round(surplus*0.6).toLocaleString()}</span></div><div style="display:flex;justify-content:space-between;margin:8px 0;"><span>20% - Income Growth</span><span style="color:#dc5a32;font-weight:600;">${currency} ${Math.round(surplus*0.2).toLocaleString()}</span></div><div style="display:flex;justify-content:space-between;margin:8px 0;"><span>15% - Tax Structures</span><span style="color:#dc5a32;font-weight:600;">${currency} ${Math.round(surplus*0.15).toLocaleString()}</span></div><div style="display:flex;justify-content:space-between;margin:8px 0;"><span>5% - Experimentation</span><span style="color:#dc5a32;font-weight:600;">${currency} ${Math.round(surplus*0.05).toLocaleString()}</span></div></div></div>`;
+                    els.capitalDeploymentContent.innerHTML = content;
+                }
+                
+                if (els.taxOptimizationContent) {
+                    const taxSavings = status === 'Business Owner' ? annualIncome * 0.20 : annualIncome * 0.12;
+                    let content = `<div class="insight-card"><h4>Tax Opportunity</h4><p>You're likely overpaying by <strong>${currency} ${Math.round(taxSavings).toLocaleString()}-${Math.round(taxSavings * 1.3).toLocaleString()} annually.</strong></p></div>`;
+                    if (status === 'Business Owner') {
+                        content += `<div class="insight-card"><h4>Action: S-Corp Evaluation</h4><p>Estimated savings: ${currency} ${Math.round(annualIncome * 0.12).toLocaleString()}/year.</p></div>`;
+                    } else {
+                        content += `<div class="insight-card"><h4>Action: Retirement Maximization</h4><p>Estimated savings: ${currency} ${Math.round(annualIncome * 0.08).toLocaleString()}/year.</p></div>`;
+                    }
+                    els.taxOptimizationContent.innerHTML = content;
+                }
+                
+                if (els.actionPlanContent) {
+                    let content = `<div class="insight-card"><h4>Days 1-7: Setup</h4><p>☐ Tax strategy session ☐ Entity review ☐ Max retirement ☐ Research opportunities</p></div><div class="insight-card"><h4>Days 8-30: Launch</h4><p>☐ Identify income opportunities ☐ Create offering ☐ Setup tracking ☐ Begin marketing</p></div><div class="insight-card"><h4>Days 31-90: Execute</h4><p>☐ Launch income stream ☐ Deploy capital ☐ Track metrics ☐ Quarterly review</p></div>`;
+                    els.actionPlanContent.innerHTML = content;
+                }
+                
+                if (els.projection90) {
+                    const proj90 = liquid + (surplus * 3);
+                    const proj12m = liquid + (surplus * 12) + (annualIncome * 0.10);
+                    const proj5yr = liquid + (annualSurplus * 60 * 1.08) + (annualIncome * 0.50);
+                    els.projection90.textContent = `${currency} ${Math.round(proj90).toLocaleString()}`;
+                    if (els.projection12m) els.projection12m.textContent = `${currency} ${Math.round(proj12m).toLocaleString()}`;
+                    if (els.projection5yr) els.projection5yr.textContent = `${currency} ${Math.round(proj5yr).toLocaleString()}`;
+                    if (els.incomeGrowth) els.incomeGrowth.textContent = `${Math.round(annualIncome).toLocaleString()} → ${Math.round(annualIncome * 1.25).toLocaleString()} (Y1)`;
+                }
+                
+                if (els.riskContent) {
+                    let content = `<div class="insight-card"><h4>Key Risks</h4><p>• Single income source<br>• Tax inefficiency<br>• Asset protection gaps<br>• Wealth plateau without income growth</p></div><div class="insight-card"><h4>90-Day Priorities</h4><p>1. <strong>Entity Structure</strong> (HIGH)<br>2. <strong>Income Diversification</strong> (CRITICAL)<br>3. <strong>Tax Optimization</strong> (HIGH)</p></div>`;
+                    els.riskContent.innerHTML = content;
+                }
+                
+                if (els.benchmarkContent) {
+                    let content = `<div class="insight-card"><h4>Savings Rate: ${savingsRate}%</h4><p>Top 5% exceed 20%. You're in the ${savingsRate >= 20 ? 'elite range' : 'strong position'}.</p></div><div class="insight-card"><h4>Your Advantage</h4><p>2-3 strategic income streams could 2-3x your wealth velocity within 24 months.</p></div>`;
+                    els.benchmarkContent.innerHTML = content;
+                }
+                
+            } catch(error) {
+                console.error('Report error:', error);
+            }
+        }
+        
+        function scheduleCall() {
+            const email = document.getElementById('email').value;
+            if (!email) {
+                alert('Please enter your email first');
+                return;
+            }
+            window.open(`https://calendly.com/your-scheduler?email=${encodeURIComponent(email)}`, '_blank');
+        }
+        
+        window.addEventListener('DOMContentLoaded', () => {
+            updateProgress();
+        });
+    </script>
+</body>
+</html>
